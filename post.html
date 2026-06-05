@@ -1,0 +1,19 @@
+---
+layout: default
+---
+{% assign m = site.categories_meta[page.cat_key] %}
+<section class="cat-head reveal">
+  <p class="theme-num fr-it">{{ m.num }}</p>
+  <p class="sec-en fr-it">{{ m.en }}</p>
+  <h1>{{ m.ja }}</h1>
+  <p class="cat-desc">{{ m.desc }}</p>
+</section>
+
+{% assign posts = site.categories[page.cat_key] %}
+{% if posts and posts.size > 0 %}
+<div class="cards">
+  {% for post in posts %}{% include post-card.html post=post %}{% endfor %}
+</div>
+{% else %}
+<p class="empty klee">まだ記録はありません。これから、ゆっくり。</p>
+{% endif %}

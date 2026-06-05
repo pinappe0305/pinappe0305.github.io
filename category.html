@@ -1,0 +1,4 @@
+{%- assign total = site.posts | size -%}
+{%- assign pnum = 1 -%}
+{%- for p in site.posts -%}{%- if p.url == include.post.url -%}{%- assign pnum = total | minus: forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{{- pnum | prepend: '000' | slice: -3, 3 -}}

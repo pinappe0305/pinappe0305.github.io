@@ -1,0 +1,12 @@
+---
+layout: default
+title: 記録一覧
+permalink: /log/
+---
+<section class="sec-head page-head reveal">
+  <p class="sec-en fr-it">Archive</p>
+  <h1>すべての記録</h1>
+</section>
+<div class="cards">
+  {% for post in site.posts %}{% include post-card.html post=post %}{% endfor %}
+</div>

@@ -1,0 +1,21 @@
+{%- assign cat = site.categories_meta[include.post.categories.first] -%}
+<article class="card reveal">
+  <a class="card-link" href="{{ include.post.url }}">
+    <div class="card-img">
+      {%- if include.post.image -%}
+      <img src="{{ include.post.image }}" alt="" loading="lazy">
+      {%- else -%}
+      <span class="card-img-blank klee">ご機嫌</span>
+      {%- endif -%}
+    </div>
+    <div class="card-body">
+      <p class="card-meta">
+        <span class="fr-it">No.{% include post-number.html post=include.post %}</span>
+        <span class="fr-it">{{ include.post.date | date: "%Y.%m.%d" }}</span>
+        {% if cat %}<span class="card-cat">{{ cat.en }}</span>{% endif %}
+      </p>
+      <h3 class="card-title">{{ include.post.title }}</h3>
+      <p class="card-excerpt">{% if include.post.description %}{{ include.post.description }}{% else %}{{ include.post.excerpt | strip_html | strip_newlines | truncate: 64 }}{% endif %}</p>
+    </div>
+  </a>
+</article>

@@ -1,0 +1,63 @@
+backend:
+  name: github
+  repo: pinappe0305/pinappe0305.github.io
+  branch: main
+
+site_url: https://pinappe0305.github.io
+display_url: https://pinappe0305.github.io
+
+media_folder: assets/img/uploads
+public_folder: /assets/img/uploads
+
+collections:
+  - name: posts
+    label: 記録（記事）
+    label_singular: 記録
+    folder: _posts
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{fields.slug}}"
+    summary: "{{title}}（{{category}}）"
+    sortable_fields: [date, title]
+    fields:
+      - label: タイトル
+        name: title
+        widget: string
+      - label: URL名（半角英小文字とハイフンのみ）
+        name: slug
+        widget: string
+        pattern: ["^[a-z0-9]+(-[a-z0-9]+)*$", "半角英小文字・数字・ハイフンのみ（例 basil-morning）"]
+        hint: 記事のURLになります。例 basil-morning
+      - label: 日付
+        name: date
+        widget: datetime
+      - label: カテゴリ
+        name: category
+        widget: select
+        options:
+          - { label: "01 Invest｜投資のリアル", value: invest }
+          - { label: "02 Life｜暮らしを耕す", value: life }
+          - { label: "03 Family｜家族と時間", value: family }
+          - { label: "04 Reflect｜思索と戦略", value: reflect }
+      - label: 写真（任意）
+        name: image
+        widget: image
+        required: false
+      - label: 抜粋（一覧用・任意）
+        name: description
+        widget: string
+        required: false
+        hint: 空欄なら本文の冒頭が使われます
+      - label: 手書きメモ（任意）
+        name: memo
+        widget: string
+        required: false
+        hint: タイトル下に手書き風で小さく表示されます
+      - label: 公開する
+        name: published
+        widget: boolean
+        default: false
+        hint: オフのまま保存すれば下書きです。オンにして保存すると数分でサイトに公開されます
+      - label: 本文
+        name: body
+        widget: markdown
