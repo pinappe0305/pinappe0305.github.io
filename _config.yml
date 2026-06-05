@@ -1,0 +1,54 @@
+# ご機嫌に暮らす、人生の後半戦。 — サイト基本設定
+title: ご機嫌に暮らす、人生の後半戦。
+description: 投資、家族、健康、キャリア、趣味と仲間。人生の後半を、機嫌よく丁寧に生きるための記録。
+url: "https://pinappe0305.github.io"
+baseurl: ""
+lang: ja
+timezone: Asia/Tokyo
+author: あらい りょうた
+
+permalink: /:year/:month/:slug/
+future: false
+markdown: kramdown
+
+exclude:
+  - README.md
+
+# 記事の既定値（CMSからlayout指定不要・未指定なら非公開）
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      published: false
+
+# 4カテゴリの表示情報
+categories_meta:
+  invest:
+    num: "01"
+    en: Invest
+    ja: 投資のリアル
+    desc: 不動産、インデックス、新規事業、お金との付き合い方。
+  life:
+    num: "02"
+    en: Life
+    ja: 暮らしを耕す
+    desc: 家庭菜園、料理、健康管理。
+  family:
+    num: "03"
+    en: Family
+    ja: 家族と時間
+    desc: 妻と3人の子との時間。
+  reflect:
+    num: "04"
+    en: Reflect
+    ja: 思索と戦略
+    desc: キャリア、生き方、人生戦略。
+
+# SNSリンク（あとで自分のURLに書き換えてください）
+sns:
+  x: "https://x.com/"
+  instagram: "https://www.instagram.com/"
+  note: "https://note.com/"
+  youtube: "https://www.youtube.com/"

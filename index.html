@@ -1,17 +1,68 @@
 ---
-title: 速く走るのをやめた日
-slug: stop-running-fast
-date: 2026-06-02 22:00:00 +0900
-category: reflect
-image: /assets/img/sample-reflect.svg
-description: 40歳手前で一度立ち止まった話と、そこから変えたこと。
-memo: 急がない。でも、止まらない。
-published: true
+layout: default
 ---
-40歳を目前にしたある時期、自分が何のために走っているのか分からなくなった。昇進、海外駐在、資産形成。どれも順調なはずなのに、心だけが置き去りになっていた。いわゆるミドルエイジクライシスだったのだと思う。
+<section class="hero">
+  <p class="hero-catch reveal">ミドルエイジクライシスを、乗り越えたその先に</p>
+  <h1 class="hero-title reveal">ご機嫌に暮らす、<br>人生の後半戦。</h1>
+  <p class="hero-lead reveal">投資、家族、健康、キャリア、趣味と仲間。<br class="pc">人生の後半を、機嫌よく丁寧に生きるための記録。</p>
+  <p class="hero-memo klee reveal">— 公開ノート、はじめました。</p>
+</section>
 
-立ち止まって最初にやったのは、増やすことではなく、減らすことだった。付き合いの飲み会、惰性のニュース、他人との比較。空いた場所に、睡眠と運動と家族との時間を戻した。
+<section class="profile-band reveal">
+  <dl>
+    <div><dt>拠点</dt><dd>横浜</dd></div>
+    <div><dt>家族</dt><dd>妻と3人の子</dd></div>
+    <div><dt>いま</dt><dd>41歳・後半戦へ</dd></div>
+    <div><dt>大切に</dt><dd>機嫌よく丁寧に</dd></div>
+  </dl>
+</section>
 
-> 人生の後半戦に必要なのは、加速ではなく、操縦だ。
+<section class="feed">
+  <header class="sec-head reveal">
+    <p class="sec-en fr-it">Journal</p>
+    <h2>最近の記録</h2>
+  </header>
+  <div class="cards">
+    {% for post in site.posts limit: 6 %}{% include post-card.html post=post %}{% endfor %}
+  </div>
+  <p class="more reveal"><a href="/log/">すべての記録を見る →</a></p>
+</section>
 
-戦略を立てるのは今も好きだ。キャリアも投資も、考え抜くこと自体が趣味みたいなものだから。ただ、目的地が変わった。「より速く、より多く」から、「機嫌よく、丁寧に」へ。このサイトは、その操縦記録でもある。
+<section class="themes" id="themes">
+  <header class="sec-head reveal">
+    <p class="sec-en fr-it">Themes</p>
+    <h2>この場所で書くこと</h2>
+  </header>
+  <div class="theme-grid">
+    {% assign keys = "invest,life,family,reflect" | split: "," %}
+    {% for key in keys %}{% assign m = site.categories_meta[key] %}
+    <a class="theme reveal" href="/{{ key }}/">
+      <span class="theme-num fr-it">{{ m.num }}</span>
+      <span class="theme-en fr-it">{{ m.en }}</span>
+      <h3>{{ m.ja }}</h3>
+      <p>{{ m.desc }}</p>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="about" id="about">
+  <header class="sec-head reveal">
+    <p class="sec-en fr-it">About</p>
+    <h2>この場所について</h2>
+  </header>
+  <div class="about-body">
+    <p class="reveal">40歳を目前に、一度立ち止まった。仕事はうまくいっているはずなのに、どこかずっと急いでいて、何のために走っているのか分からなくなっていた。いわゆるミドルエイジクライシス、だったのだと思う。</p>
+    <p class="reveal">立ち止まって気づいたのは、自分に必要だったのは速く走ることではなく、機嫌よく丁寧に暮らすことだった、ということ。よく眠り、土に触れ、家族と食卓を囲み、お金とは静かに付き合う。それだけで、日々は驚くほど変わった。</p>
+    <blockquote class="pullquote reveal">ご機嫌でいることは、<br>才能ではなく、技術なのだと思う。</blockquote>
+    <p class="reveal">このサイトは、何かを売るための場所ではない。同じように人生の後半戦を歩く誰かと、価値観でつながるための「公開ノート」だ。どうぞ、ゆっくりしていってください。</p>
+    <p class="about-sign klee reveal">あらい りょうた</p>
+  </div>
+</section>
+
+<section class="note-cta reveal">
+  <p class="cta-en fr-it">For deeper notes</p>
+  <h2>もっと深く知りたい方へ</h2>
+  <p>資産形成や人生戦略について、より踏み込んだ話はnoteに書いています。</p>
+  <a class="btn-quiet" href="{{ site.sns.note }}" target="_blank" rel="noopener">noteで読む</a>
+</section>

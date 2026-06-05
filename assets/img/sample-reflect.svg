@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+<rect width="800" height="600" fill="#ede5d2"/>
+<path d="M60 200 L740 200" stroke="#26211c" stroke-width="2" opacity="0.25"/>
+<circle cx="600" cy="150" r="56" fill="#374627" opacity="0.8"/>
+<path d="M120 540 C 240 480, 200 420, 320 380 C 440 340, 400 300, 520 260 C 600 235, 640 220, 680 205" stroke="#374627" stroke-width="5" fill="none" stroke-dasharray="1 14" stroke-linecap="round" opacity="0.85"/>
+<text x="84" y="120" font-family="Georgia, serif" font-style="italic" font-size="34" fill="#374627" opacity="0.55">Reflect</text>
+</svg>
